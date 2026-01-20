@@ -1,6 +1,7 @@
 import React from 'react'
+import HeroSection from './HeroSection'
 
-function index() {
+function Home() {
   return (
     <>
         <HeroSection />
@@ -8,4 +9,4 @@ function index() {
   )
 }
 
-export default index
+export default Home
