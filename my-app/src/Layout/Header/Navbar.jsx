@@ -4,7 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
-import contactIcon from "../../../public/assets/contact-icon.png"
+import contactIcon from "../../../public/assets/Navbar/contact-icon.png"
+import menuIcon from "../../../public/assets/Navbar/menu-icon.png"
+import Logo from "../../../public/assets/Navbar/idst-logo.webp"
+
 
 // Navigation links data
 const navLinks = [
@@ -72,29 +75,16 @@ export default function Navbar() {
                   aria-label="Open menu"
                 >
                   {/* Custom Menu Icon - Replace with your image */}
-                  <div className="relative w-5 h-5">
-                    {/* You can use Image component here */}
-                    {/* <Image 
-                      src="/menu-icon.png" 
+                  <div className="relative w-8 h-11 flex items-center me-4">
+                    
+                    <Image 
+                      src={menuIcon} 
                       alt="Menu" 
-                      width={20} 
-                      height={20}
-                      className="object-contain"
-                    /> */}
-                    {/* Temporary icon (replace with your image) */}
-                    <svg 
-                      className="w-5 h-5" 
-                      viewBox="0 0 20 20" 
-                      fill="currentColor"
-                    >
-                      <path 
-                        fillRule="evenodd" 
-                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" 
-                        clipRule="evenodd" 
-                      />
-                    </svg>
+                      fill
+                      className="object-cover w-full h-full"
+                    />
                   </div>
-                  <span className="font-medium">MENU</span>
+                  <span className="font-light font-manrope text-[14px] ">MENU</span>
                 </button>
               )}
             </div>
@@ -102,8 +92,13 @@ export default function Navbar() {
             {/* Desktop: Center - IDST Logo, Mobile: Hidden */}
             {!isMobile && (
               <div className="absolute left-1/2 transform -translate-x-1/2">
-                <Link href="/" className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
-                  IDST
+                <Link href="/" className="relative block w-30 h-24 font-manrope text-2xl font-medium text-gray-800  transition-colors">
+                    <Image 
+                      src={Logo} 
+                      alt="Menu" 
+                      fill
+                      className="object-contain w-full h-full"
+                    />
                 </Link>
               </div>
             )}
@@ -125,7 +120,7 @@ export default function Navbar() {
                   href="/contact"
                   className="flex items-center space-x-2 text-black hover:text-[#371313] transition-colors"
                 >
-                  <div className="relative w-5 h-5 bg-red-500">
+                  <div className="relative w-8 h-11 flex items-center me-4">
                     <Image 
                       src={contactIcon}
                       alt="Connect" 
@@ -134,8 +129,6 @@ export default function Navbar() {
                     />
                   </div>
                   <span className="font-medium">CONNECT</span>
-                  {/* Custom Connect Icon - Replace with your image */}
-                  
                 </Link>
               )}
             </div>
